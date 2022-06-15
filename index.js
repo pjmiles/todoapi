@@ -14,6 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
 
+//Home page
+app.get('/', (req, res) =>{
+  res.send('Welcome to my API')
+})
 
 const Todo = require('./model/task') //model import
 
@@ -21,7 +25,7 @@ const Todo = require('./model/task') //model import
 app.get('/todos', async (req, res) => {
   const todos = await Todo.find()
 
-  res.json(todos)
+  res.json(todos) 
 })
 
 
