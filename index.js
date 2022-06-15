@@ -3,13 +3,19 @@ const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
 const cors = require('cors')
+const db = require('./config/mongoose') //connection to database
+
+
 
 
 
 const app = express();
+
+// middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
+
 
 
 
