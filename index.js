@@ -28,6 +28,10 @@ app.post('/todo', Todos)
 app.delete('/todo', Todos)
 
 
+
+// database
+console.log(`${db}`, process.env.db)
+
 // connection to server
 app.listen(process.env.PORT, () =>
   console.log(`Server started on port: ${process.env.PORT}`)
