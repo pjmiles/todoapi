@@ -6,9 +6,17 @@ const getAllTodo = asyncWrapper(async (req, res) => {
     const todo = await Todo.find()
 
     res.json(todo)
-    console.log(todo)
+  
+})
+
+// get todo by id
+const getTodoById = asyncWrapper(async (req, res) => {
+    const todoById = await Todo.findOne()
+
+    res.json(todoById)
 })
 
 module.exports = {
-    getAllTodo
+    getAllTodo,
+    getTodoById
 };

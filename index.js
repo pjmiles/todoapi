@@ -20,6 +20,9 @@ const Todos = require("./routes/task");
 // to get all todos
 app.use("/todo", Todos);
 
+// get todo by id
+app.use("/todo", Todos);
+
 // create a todo task
 app.post("/todo", Todos);
 
