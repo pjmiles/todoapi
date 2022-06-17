@@ -2,7 +2,8 @@ const Todo = require('../model/task')
 
 // Create todo list
 const createTodo = ((req, res) => {
-    const todo = new Todo({ text: req.body.text })
+    const { text, description } = req.body
+    const todo = new Todo({ text, description })
     todo.save()
     res.json(todo)
 })
