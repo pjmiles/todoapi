@@ -11,11 +11,13 @@ app.use(cors());
 
 //Home page
 app.get("/", (req, res) => {
-  res.send("Welcome to my API");
+  res.send("Welcome to PJMiles API");
 });
 
-// to get all todos
+
 const Todos = require("./routes/task");
+
+// to get all todos
 app.use("/todo", Todos);
 
 // create a todo task
@@ -23,6 +25,9 @@ app.post("/todo", Todos);
 
 //to delete a todo
 app.delete("/todo", Todos);
+
+//to update a todo
+app.put("/todo", Todos);
 
 
 // connection to database
