@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
+const Todos = require("./routes/task");
 
 // middlewares
 app.use(express.json());
@@ -14,21 +15,19 @@ app.get("/", (req, res) => {
   res.send("Welcome to PJMiles todo API");
 });
 
-const Todos = require("./routes/task");
-
 // todo api
 app.use("/todos", Todos);
 
-
 // connection to database
 mongoose.connect(
-  process.env.db,
+  process.env.dbURI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
-  () => {
-    console.log("Connected to Database");
+  (err) => {
+    if(err) console.log(err)
+   else console.log("Connected to Database");
   }
 );
 

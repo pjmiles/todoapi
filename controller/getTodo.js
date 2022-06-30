@@ -1,5 +1,4 @@
 const Todo = require('../model/task')
-const asyncWrapper = require('../middleware/asyncwrap')
 
 // to get all task
 const getAllTodo =  async (req, res) => {
